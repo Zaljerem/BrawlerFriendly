@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <name>Brawler-Friendly</name>
+    <author>Zaljerem</author>
+    <supportedVersions><li>1.6</li></supportedVersions>
+    <packageId>zal.brawlerfriendly</packageId>
+	<modDependencies>
+    <li>
+        <packageId>brrainz.harmony</packageId>
+        <displayName>Harmony</displayName>
+        <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+        <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+    </li>
+	</modDependencies>
+  <loadBefore />   
+  <loadAfter>	
+<li>brrainz.harmony</li>
+</loadAfter>
+<modVersion IgnoreIfNoMatchingField="True">1.0.0</modVersion>
+  	<description>
+This mod allows you to add a modExtension to a ranged weapon so brawlers can use it without penalty.
+
+It's really made for modders who were using VEF's (entirely different) implementation that has been removed for 1.6, but it's certainly usable by anyone who wants to add a modExtension to a ThingDef. :)
+
+Feel free to put the assembly directly into your mod rather than using this as a dependency. Info regarding the modExtension is contained within the mod folder. 
+Consider this under the "Don't Be a Dick" Public License. (https://dbad-license.org/)
+
+
+Background and technical info:
+
+Vanilla Expanded Framework had this functionality until 1.6. When, at Taranchuk's suggestion, I went to examine the code to hopefully get it working and back into the Framework, I realized that it is overly-convoluted and complex. I fell back to my standard mode: "What's the simplest possible thing that can work?" ... so I rolled my own:
+
+- modExtension for the weapon ThingDef - for detection
+- Harmony postfix to Alert_BrawlerHasRangedWeapon.GetReport - addresses the alert message
+- Harmony prefix to ThingDef.IsRangedWeapon (getter) - addresses the right-click equip warning
+- Harmony prefix to ThoughtWorker_IsCarryingRangedWeapon.CurrentStateInternal - addresses the bad thought
+
+Source code included.
+</description>
+</ModMetaData>
