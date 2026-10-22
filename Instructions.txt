@@ -1,0 +1,3 @@
+<modExtensions>
+    <li Class="BrawlerFriendly.DefModExtension_BrawlerFriendly" />
+</modExtensions>

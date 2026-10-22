@@ -7,7 +7,8 @@ namespace BrawlerFriendly
     {
         
         public BrawlerFriendlyMod(ModContentPack content) : base(content)
-        {            
+        {
+            
             new Harmony("zal.brawlerfriendly").PatchAll();
 
         }        
